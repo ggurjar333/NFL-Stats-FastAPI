@@ -22,9 +22,7 @@ async def extract_boxscore(game_id: str):
         version=TestConstants.VERSION,
         language_code=TestConstants.LANGUAGE_CODE,
     ).json()
-    transformer = GameFeedsTransformer(bronze_data)
-    gold_data = transformer.transform_boxscore()
-    return gold_data
+    return bronze_data
 
 
 @app.get("/sportradar/boxscore/transform/{game_id}")
